@@ -15,6 +15,14 @@ namespace Business
                     throw new NotSupportedException("Not enough in stock");
                 }
             }
+            else
+            {
+                if (quantity + Balance.Value > 1000)
+                {
+                    throw new NotSupportedException("Not enough space");
+                }
+            }
+
 
             Balance.Value += quantity;
         }
