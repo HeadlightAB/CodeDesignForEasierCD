@@ -8,6 +8,11 @@ namespace Business
         
         public void In(uint quantity)
         {
+            if (quantity + Balance.Value > 1000)
+            {
+                throw new NotSupportedException("Not enough space");
+            }
+
             Balance.Value += (int)quantity;
         }
 
